@@ -15,12 +15,20 @@ public class AgeChecker {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         AgeChecker age = new AgeChecker();
+
+        System.out.println("Enter your age: ");
+        int edad = sc.nextInt();
+
         try {
-
+            age.isOlder(edad);
         }
-        catch (){
-
+        catch (TooOldException e){
+            System.out.println(e.getMessage());
         }
+        catch (TooYoungException e){
+            System.out.println(e.getMessage());
+        }
+        sc.close();
     }
 
 }
